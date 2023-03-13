@@ -6,6 +6,7 @@ function App() {
   const name = <h1>Matthew Kettelkamp</h1>;
   const age = 27;
   const isRed = false;
+  const skills = ["HTML", "CSS", "SCSS", "Javascript", "Ruby", "Rails", "React", "Github", "Figma"]
 
   return (
 
@@ -13,10 +14,22 @@ function App() {
       <GetName name="Matthew Kettelkamp" />
       <GridArea grid1="HTML" grid2="SCSS" grid3="Javascript" grid4="Ruby" grid5="Rails" grid6="React"/>
 
+      {/* mess around ternary operators */}
       <div>
         {age > 25 ? <h3>You're a badass</h3> : <h3>You're young but almost old</h3>}
         <h2 style={{color: isRed ? "red" : "black"}}>Get After It</h2>
         {isRed && <button>Jump In</button>}     {/* adds a button if isRed is true */}
+      </div>
+
+      {/* grid list attempt */}
+      <div className='skills-container'>
+        {skills.map((skill, index) => {
+          return (
+            <div className='skill'>
+              <p> {skill} </p>
+            </div>
+          )
+        })}
       </div>
     </div>
   );
