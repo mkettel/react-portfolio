@@ -8,16 +8,16 @@ function App() {
   return (
 
     <div className="App">
-      <GetName />
+      <GetName name="Matthew Kettelkamp" />
     </div>
   );
 }
 
 // Name Component
-const GetName = () => {
+const GetName = (props) => {
   return (
   <div className='header'>
-    <h1>Matthew Kettelkamp</h1>
+    <h1>{props.name}</h1>
   </div>
   );
 };
