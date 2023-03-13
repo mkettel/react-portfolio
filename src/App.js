@@ -6,7 +6,13 @@ function App() {
   const name = <h1>Matthew Kettelkamp</h1>;
   const age = 27;
   const isRed = false;
-  const skills = ["HTML", "CSS", "SCSS", "Javascript", "Ruby", "Rails", "React", "Github", "Figma"]
+  const skills = ["HTML", "CSS", "SCSS", "Javascript", "Ruby", "Rails", "React", "Github", "Figma"];
+  const projects = [
+    { name: "filmy-j", skills: "HTML"},
+    { name: "Deepwork.", skills: "SCSS"},
+    { name: "Defit", skills: "Ruby"},
+
+  ]
 
   return (
 
@@ -27,6 +33,18 @@ function App() {
           return (
             <div className='skill'>
               <p> {skill} </p>
+            </div>
+          )
+        })}
+      </div>
+
+      {/* Projects grid */}
+      <div className='skills-container'>
+        {projects.map((project, key) => {
+          return (
+            <div className='skill'>
+              <p> {project.name} </p>
+              <p> {project.skills} </p>
             </div>
           )
         })}
