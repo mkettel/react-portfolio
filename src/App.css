@@ -56,6 +56,7 @@ body {
   width: 100%;
   padding: 0px 20px;
   border-radius: 10px;
+  margin: 5px 0px;
 }
 .taskList .task .tick {
   padding-right: 5px;
