@@ -7,6 +7,7 @@ function App() {
   // STATES
   const [todo, setTodo] = useState([]);  //array for the state of the task list
   const [inputValue, setInputValue] = useState("");
+  const [color, setColor] = useState("black");
 
   // FUNCTIONS
   const handleChange = (event) => {
@@ -15,7 +16,8 @@ function App() {
   const addTask = () => {
     const task = {
       id: todo.length === 0 ? 1 : todo[todo.length - 1].id + 1,
-      taskName: inputValue
+      taskName: inputValue,
+      complete: false,
     }
     setTodo([...todo, task]);
   }
@@ -23,7 +25,13 @@ function App() {
     setTodo(todo.filter((task) => task.id !== id));
   }
   const completeTask = (id) => {
-
+    setTodo(todo.map((task) => {
+      if (task.id === id) {
+        return {...task, complete: true};
+      } else {
+        return task;
+      }
+    }))
   }
   return (
 
@@ -37,7 +45,7 @@ function App() {
       </div>
       <div className='taskList'>
         {todo.map((task) => {
-          return <Task taskName={task.taskName} id={task.id} deleteTask={deleteTask} />
+          return <Task taskName={task.taskName} id={task.id} complete={task.complete} deleteTask={deleteTask} completeTask={completeTask} />
         })}
 
       </div>
