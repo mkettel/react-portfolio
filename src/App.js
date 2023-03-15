@@ -1,82 +1,46 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
+import { Task } from "./Task";
 
 function App() {
-
-  const name = <h1>Matthew Kettelkamp</h1>;
-  const isRed = false;
-  const skills = ["HTML", "CSS", "SCSS", "Javascript", "Ruby", "Rails", "React", "Github", "Figma"];
-  const projects = [
-    { name: "filmy-j", skills: "HTML"},
-    { name: "Deepwork.", skills: "SCSS"},
-    { name: "Defit", skills: "RUBY HTML CSS SCSS"},
-  ]
-  const doctors = [
-    {name: "Millet", isSteadman: true},
-    {name: "Gnirke", isSteadman: false},
-    {name: "Philippon", isSteadman: true},
-    {name: "Vidal", isSteadman: false},
-    {name: "Godin", isSteadman: true},
-    {name: "Braxton", isSteadman: false},
-  ]
-// State Practice
-
+  // STATES
+  const [todo, setTodo] = useState([]);  //array for the state of the task list
   const [inputValue, setInputValue] = useState("");
 
-  const handleInputChange = (event) => {
+  // FUNCTIONS
+  const handleChange = (event) => {
     setInputValue(event.target.value);
   }
+  const addTask = () => {
+    const task = {
+      id: todo.length === 0 ? 1 : todo[todo.length - 1].id + 1,
+      taskName: inputValue
+    }
+    setTodo([...todo, task]);
+  }
+  const deleteTask = (id) => {
+    setTodo(todo.filter((task) => task.id !== id));
+  }
+  const completeTask = (id) => {
 
-  // create a state:
-  const [hideContent, setHideContent] = useState(true);
-
-
+  }
   return (
 
     <div className="App">
-      <GetName name="Matthew Kettelkamp" />
-
-      <button onClick={() => {
-        setHideContent(!hideContent);
-      }}>Hide All Text</button>
-
-
-
-      {/* grid list attempt */}
-      { hideContent && <div className='skills-container'>
-        {skills.map((skill, index) => {
-          return (
-            <div className='skill'>
-              <p> {skill} </p>
-            </div>
-          )
+      <div className='spacer'>
+        <h1>To-Do List</h1>
+      </div>
+      <div className='addContainer'>
+        <input type="text" className='textBox' onChange={handleChange} />
+        <button className='mainButt' onClick={addTask}>Add Task</button>
+      </div>
+      <div className='taskList'>
+        {todo.map((task) => {
+          return <Task taskName={task.taskName} id={task.id} deleteTask={deleteTask} />
         })}
-      </div> }
 
-      {/* Projects grid */}
-      { hideContent && <div className='skills-container'>
-        {projects.map((project, key) => {
-          return (
-            <div className='skill'>
-              <h3 className='project-title'> {project.name} </h3>
-              <p className='project-lang'> {project.skills} </p>
-            </div>
-          )
-        })}
-      </div> }
-
-      {/* Doctors Container */}
-      {hideContent && <div className='doctor-container'>
-        <div className='doc-header'>
-          <h3>Steadman Doctors</h3>
-        </div>
-        <div className='doc-list'>
-          {doctors.map(
-            (doctor, key) => !doctor.isSteadman && <p> {doctor.name} </p>
-          )}
-        </div>
-      </div> }
+      </div>
 
 
     </div>
@@ -84,49 +48,5 @@ function App() {
 }
 
 
-// ---------------------------------------
-// Name Component
-const GetName = (props) => {
-  return (
-  <div className='header'>
-    <h1>{props.name}</h1>
-  </div>
-  );
-};
-
-// Doctor Component
-const SteadmanDoc = (props) => {
-  return (
-    <div className='doctor-container'>
-
-    </div>
-  )
-}
-
-// Skills Component
-const GridArea = (props) => {
-  return (
-  <div className='skills-container'>
-    <div className='skill'>
-      <p>{props.grid1}</p>
-    </div>
-    <div className='skill'>
-      <p>{props.grid2}</p>
-    </div>
-    <div className='skill'>
-      <p>{props.grid3}</p>
-    </div>
-    <div className='skill'>
-      <p>{props.grid4}</p>
-    </div>
-    <div className='skill'>
-      <p>{props.grid5}</p>
-    </div>
-    <div className='skill'>
-      <p>{props.grid6}</p>
-    </div>
-  </div>
-  )
-}
 
 export default App;
