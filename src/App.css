@@ -54,6 +54,8 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding: 0px 20px;
+  border-radius: 10px;
 }
 .taskList .task .tick {
   padding-right: 5px;
@@ -69,6 +71,9 @@ body {
   padding-left: 15px;
 }
 .taskList .task .mainButt {
+  position: absolute;
+  right: 20px;
+  top: 20px;
   height: 30px;
   width: 50px;
   background-color: transparent;
@@ -77,6 +82,21 @@ body {
 }
 .taskList .task .mainButt:hover {
   box-shadow: 10px 10px 1px 0px blue;
+  cursor: pointer;
+  transition: .3s;
+}
+.taskList .task .compButt {
+  position: absolute;
+  right: 90px;
+  top: 20px;
+  height: 30px;
+  width: 50px;
+  background-color: transparent;
+  border: 1px solid black;
+  transition: .3s;
+}
+.taskList .task .compButt:hover {
+  box-shadow: 10px 10px 1px 0px green;
   cursor: pointer;
   transition: .3s;
 }
