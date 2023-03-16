@@ -1,153 +1,18 @@
 body {
   background-color: teal;
 }
-.spacer {
-  margin: 100px;
-}
-.spacer h1 {
-  text-align: center;
-  font-size: 48px;
-  font-weight: 400;
-}
-.addContainer {
-  max-width: 1300px;
-  margin: auto;
+.nav-container {
   display: flex;
-  justify-content: center;
-}
-.addContainer .textBox {
-  background-color: transparent;
-  border: 1px solid black;
-  width: 400px;
-  height: 30px;
-  margin: 0px 20px 0px 0px;
-}
-.addContainer .mainButt {
-  color: black;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 28px;
-  transition: .4s;
-}
-.addContainer .mainButt:active {
-  color: white;
-}
-.addContainer .mainButt:hover {
-  box-shadow:  inset 0px -3px 0px 0px blue;
-  transition: .4s;
-}
-
-/* TASK LIST AREA */
-.taskList {
-  max-width: 700px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  padding-top: 30px;
-}
-.taskList .task {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0px 20px;
-  border-radius: 10px;
-  margin: 5px 0px;
-}
-.taskList .task .tick {
-  padding-right: 5px;
-  position: absolute;
-  top: -5px;
-  font-size: 24px;
-}
-.taskList .task .taskItem {
-  padding-top: 5px;
-  font-size: 22px;
-  font-weight: 400;
-  text-transform: capitalize;
-  padding-left: 15px;
-}
-.taskList .task .mainButt {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  height: 30px;
-  width: 50px;
-  background-color: transparent;
-  border: 1px solid black;
-  transition: .3s;
-}
-.taskList .task .mainButt:hover {
-  box-shadow: 10px 10px 1px 0px blue;
-  cursor: pointer;
-  transition: .3s;
-}
-.taskList .task .compButt {
-  position: absolute;
-  right: 90px;
-  top: 20px;
-  height: 30px;
-  width: 50px;
-  background-color: transparent;
-  border: 1px solid black;
-  transition: .3s;
-}
-.taskList .task .compButt:hover {
-  box-shadow: 10px 10px 1px 0px green;
-  cursor: pointer;
-  transition: .3s;
-}
-
-
-/* API Section */
-.api-container-input {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
 }
-.api-container-input .input-section {
-  padding: 0px 0px 30px 0px;
-}
-.api-container-input .api-input {
+.nav-container .navLink {
+  margin: 20px 40px;
   color: black;
-  border: none;
-  background-color: transparent;
-  border: 1px solid black;
-  width: 400px;
-  height: 30px;
-  border-radius: 5px;
+  transition: .3s all;
+  text-decoration: none;
 }
-.api-container-input .api-input:hover {
-  color: aliceblue;
-  transition: .4s;
-}
-.api-container-input .input-section .searchButt {
-  color: black;
-  background-color: transparent;
-  border: 1px solid black;
-  padding: 8px 20px;
-  border-radius: 5px;
-  margin: 0px 0px 0px 10px;
-  cursor: pointer;
-  transition: .4s;
-
-}
-.api-container-input .input-section .searchButt:hover {
-  box-shadow: inset -150px 0px 0px 0px blue;
-  transition: .4s;
-}
-.api-container-input .drinks {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
-}
-.api-container-input .drinks .drinkName {
-  font-size: 18px;
-  color: black;
+.nav-container .navLink:hover {
+  color: whitesmoke;
+  transition: .3s all;
 }
