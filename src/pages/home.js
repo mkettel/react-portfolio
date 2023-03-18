@@ -5,6 +5,7 @@ import axios from "axios";
 
 export const Home = () => {
   const { username } = useContext(AppContext);
+  // Horoscope API
   const options = {
     method: 'POST',
     url: 'https://sameer-kumar-aztro-v1.p.rapidapi.com/',
@@ -15,9 +16,10 @@ export const Home = () => {
     }
   };
 
-  const { data } = useQuery([""], () => {
-    axios.request(options).then((res) => {
-      console.log(res.data);
+  const { data } = useQuery(["horoscope"], () => {
+     axios.request(options).then((res) => {
+      console.log(res.data.description);
+      return data.description;
     }).catch((err) => {
       console.log(err);
     })
@@ -27,6 +29,7 @@ export const Home = () => {
 
   <div className="home-container">
     <h1> Hi, {username}, Welcome Home</h1>
+    <p> Your Horoscope for today is: {data?.description} </p>
   </div>
 
   )
