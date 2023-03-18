@@ -16,3 +16,15 @@ body {
   color: whitesmoke;
   transition: .3s all;
 }
+
+
+/* HOME PAGE */
+
+.home-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
