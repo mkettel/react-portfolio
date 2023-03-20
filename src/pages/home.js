@@ -17,9 +17,9 @@ export const Home = () => {
   };
 
   const { data } = useQuery(["horoscope"], () => {
-     axios.request(options).then((res) => {
+    return axios.request(options).then((res) => {
       console.log(res.data.description);
-      return data.description;
+      return res.data.description;
     }).catch((err) => {
       console.log(err);
     })
@@ -29,7 +29,7 @@ export const Home = () => {
 
   <div className="homeContainer">
     <h1 className="welcomeHeading"> Hi, {username}, Welcome Home</h1>
-    <p> Your Horoscope for today is: {data?.description} </p>
+    <p> Your Horoscope for today is: {data} </p>
   </div>
 
   )
