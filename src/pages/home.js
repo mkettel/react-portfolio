@@ -27,8 +27,8 @@ export const Home = () => {
 
   return (
 
-  <div className="home-container">
-    <h1> Hi, {username}, Welcome Home</h1>
+  <div className="homeContainer">
+    <h1 className="welcomeHeading"> Hi, {username}, Welcome Home</h1>
     <p> Your Horoscope for today is: {data?.description} </p>
   </div>
 
