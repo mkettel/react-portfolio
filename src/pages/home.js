@@ -16,7 +16,7 @@ export const Home = () => {
     }
   };
 
-  const { data } = useQuery(["horoscope"], () => {
+  const { data, isLoading } = useQuery(["horoscope"], () => {
     return axios.request(options).then((res) => {
       console.log(res.data.description);
       return res.data.description;
@@ -24,6 +24,14 @@ export const Home = () => {
       console.log(err);
     })
   })
+
+  if (isLoading) {
+    return (
+      <div className="loadingContainer">
+        <h2 className="loading"> LOADING </h2>
+      </div>
+    )
+  }
 
   return (
 

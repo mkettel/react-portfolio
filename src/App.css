@@ -32,3 +32,17 @@ body {
   font-size: 28px;
   border-bottom: 1px solid black;
 }
+
+/* loading page */
+.loadingContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loadingContainer .loading {
+  font-size: 62px;
+  font-weight: 200;
+}
