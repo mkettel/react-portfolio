@@ -10,7 +10,7 @@ export const Home = () => {
   const options = {
     method: 'POST',
     url: 'https://sameer-kumar-aztro-v1.p.rapidapi.com/',
-    params: {sign: 'sagittarius', day: 'today'},
+    params: {sign: 'cancer', day: 'today'},
     headers: {
       'X-RapidAPI-Key': 'ae420f499dmshca2539ee3101f7ap1242b7jsn67b84461ccc8',
       'X-RapidAPI-Host': 'sameer-kumar-aztro-v1.p.rapidapi.com'
@@ -39,11 +39,13 @@ export const Home = () => {
     <div className="homeContainer">
       <h1 className="welcomeHeading"> Hi, {username}, Welcome Home</h1>
       <p> Your Horoscope for today is: {data.description} </p>
-      <p>Compatibility: {data.compatibility}</p>
-      <p>Color: {data.color}</p>
-      <p>Lucky Number: {data.lucky_number}</p>
-      <p>Lucky Time: {data.lucky_time}</p>
-      <p>Mood: {data.mood}</p>
+      <div className="horoscopeData">
+        <p><span>Compatibility:</span> {data.compatibility}</p>
+        <p><span>Color:</span> {data.color}</p>
+        <p><span>Lucky Number:</span> {data.lucky_number}</p>
+        <p><span>Lucky Time:</span> {data.lucky_time}</p>
+        <p><span>Mood:</span> {data.mood}</p>
+      </div>
 
       <div className="formContainer">
         <Form />
