@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AppContext } from "../App";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import { Form } from "../components/form";
 
 export const Home = () => {
   const { username } = useContext(AppContext);
@@ -35,16 +36,26 @@ export const Home = () => {
 
   return (
 
-  <div className="homeContainer">
-    <h1 className="welcomeHeading"> Hi, {username}, Welcome Home</h1>
-    <p> Your Horoscope for today is: {data.description} </p>
-    <p>Compatibility: {data.compatibility}</p>
-    <p>Color: {data.color}</p>
-    <p>Lucky Number: {data.lucky_number}</p>
-    <p>Lucky Time: {data.lucky_time}</p>
-    <p>Mood: {data.mood}</p>
+    <div className="homeContainer">
+      <h1 className="welcomeHeading"> Hi, {username}, Welcome Home</h1>
+      <p> Your Horoscope for today is: {data.description} </p>
+      <p>Compatibility: {data.compatibility}</p>
+      <p>Color: {data.color}</p>
+      <p>Lucky Number: {data.lucky_number}</p>
+      <p>Lucky Time: {data.lucky_time}</p>
+      <p>Mood: {data.mood}</p>
 
-  </div>
+      <div className="formContainer">
+        <Form />
+      </div>
+
+      <div className="gradient">
+
+      </div>
+    </div>
+
+
+
 
   )
 }

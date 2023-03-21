@@ -46,3 +46,11 @@ body {
   font-size: 62px;
   font-weight: 200;
 }
+
+.gradient {
+  margin: 20px;
+  background: conic-gradient(from 0.40turn at 50% 50%, #f69d3c, 10deg, #6c8d9b, 350deg, #ebf8e1);
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+}
