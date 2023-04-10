@@ -24,6 +24,7 @@ export const Home = () => {
     }).catch((err) => {
       console.log(err);
     })
+
   })
 
   if (isLoading) {
@@ -37,7 +38,7 @@ export const Home = () => {
   return (
 
     <div className="homeContainer">
-      <h1 className="welcomeHeading"> Hi, {username}, Welcome Home</h1>
+      <h1 className="welcomeHeading"> Hi, ex{username}, Welcome Home</h1>
       <p> Your Horoscope for today is: {data.description} </p>
       <div className="horoscopeData">
         <p><span>Compatibility:</span> {data.compatibility}</p>
